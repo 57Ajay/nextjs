@@ -1,11 +1,14 @@
 import { Fragment } from "react"
+import Link from 'next/link'
 
-const Home = ()=>{
+const Home = () => {
   return(
     <Fragment>
       <h1 className="text-3xl font-bold text-center">Hello Ajay</h1>
-      <div className="pt-4 p-4">
-
+      <div className="flex flex-col justify-center items-center h-screen">
+      <button className="bg-blue-500 text-white p-2 rounded-lg">
+        <Link href="/dashboard">Go to Dashboard</Link>
+      </button>
       </div>
     </Fragment>
   )
