@@ -1,23 +1,31 @@
-'use client'
-import { ReactNode, createContext, useState } from "react";
+// components/contexts/theme-context.tsx
+'use client';
+import { createContext, useState, ReactNode, useContext } from 'react';
+
 type ThemeContextType = {
-    dark: boolean;
-    setDark: (dark: boolean) => void;
-};
-const defaultValue = {
-    dark: false,
-    setDark: () => {},
+  dark: boolean;
+  toggleDarkMode: () => void;
 };
 
-export const themeContext = createContext<ThemeContextType>(defaultValue);
-
-const ThemeContext =({children}:{children: ReactNode}) =>{
-    const [dark, setDark] = useState(false);
-    return(
-        <themeContext.Provider value={{dark, setDark}}>
-            {children}
-        </themeContext.Provider>
-    );
+const defaultValue: ThemeContextType = {
+  dark: false,
+  toggleDarkMode: () => {},
 };
 
-export default ThemeContext;
+const ThemeContext = createContext<ThemeContextType>(defaultValue);
+
+export const useTheme = () => useContext(ThemeContext);
+
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [dark, setDark] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDark(!dark);
+  };
+
+  return (
+    <ThemeContext.Provider value={{ dark, toggleDarkMode }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};

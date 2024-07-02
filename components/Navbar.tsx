@@ -1,22 +1,19 @@
 // components/Navbar.tsx
 'use client';
-import useTheme from '@/components/themeContextValueGetter';
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import { useTheme } from '@/components/contexts/theme-context';
 
 const Navbar = () => {
-  const dark = useTheme();
-  const toggleDarkMode = () => {
-    setDark(!dark);
-  };
+  const { dark, toggleDarkMode } = useTheme();
 
   return (
-    <nav>
-      <ul>
+    <nav className={`p-4 ${dark ? 'bg-black text-white' : 'bg-white text-black'}`}>
+      <ul className="flex justify-between items-center">
         <div className="logo">
-          <h1>Logo</h1>
+          <h1 className='pr-2'>Logo</h1>
         </div>
-        <div className="link-container">
+        <div className="link-container flex">
           <Link className="pr-2" href="/">
             Home
           </Link>
@@ -38,4 +35,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
