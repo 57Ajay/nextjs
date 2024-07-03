@@ -2,7 +2,9 @@ import React from 'react'
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <div className='ml-4'>
+      <h1>Portfolio</h1>
+    </div>
   )
 }
 
