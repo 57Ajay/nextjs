@@ -8,10 +8,12 @@ const Navbar = () => {
   const { dark, toggleDarkMode } = useTheme();
 
   return (
-    <nav className={`p-4 justify-between`}>
+    <nav className={`p-4 justify-between ${dark ? "bg-slate-500 rounded" : "bg-zinc-600 rounded"}`}>
       <ul className="flex justify-between items-center">
         <div className="logo">
-          <h1 className='pr-2'>Logo</h1>
+          <h1 className='pr-2'>
+            <Link href="/">Logo</Link>
+            </h1>
         </div>
         <div className="link-container flex">
           <Link className="pr-2" href="/">
