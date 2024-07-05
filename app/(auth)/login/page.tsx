@@ -1,8 +1,12 @@
+import Link from 'next/link';
 import React from 'react'
 
 const Login = () => {
   return (
-    <div>Login Page</div>
+    <div>
+      main Page<br />
+      <Link href="/login/login-admin">Login as Admin</Link>
+    </div>
   );
 };
 

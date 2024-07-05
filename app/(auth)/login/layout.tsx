@@ -1,19 +1,17 @@
-import Link from 'next/link'
-import React from 'react'
+import LogPath from '@/components/log-paths/log-path';
+import Link from 'next/link';
+import React from 'react';
 
-const Layout = ({chldren} : {chldren: React.ReactNode}) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  
   return (
-    <div>
-        <ul className='login-menu'>
-            <li>
-                <Link href={'/login'}>Login main</Link><br />
-                <Link href={'/login/login-user'}>Login User</Link><br />
-                <Link href={'/login/login-admin'}>Login Admin</Link>
-            </li>
-        </ul>
-        {chldren}
+    <div className='text-center'>
+      <LogPath />
+      <div className='container border-2 border-red-700 p-4 mt-2'>
+      {children}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
