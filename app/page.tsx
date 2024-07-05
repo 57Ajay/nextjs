@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import natureImage from "@/public/NaturesImage.jpg";
 
 const Home = ()=>{
   const router = useRouter();
@@ -19,7 +21,17 @@ const Home = ()=>{
         <h1>useRouter</h1>
         <button onClick={handleClick} className="bg-blue-800 p-1 rounded">about</button><br />
         <Link href={'/projects'}>Projects</Link>
-        <p>niuhdwqhd i</p>
+        <div className="relative h-80"> {/* Fixed height container */}
+          <Image 
+            src={natureImage}
+            alt="Image of a field with yellow grasses"
+            fill 
+            style={{ objectFit: 'cover' }} 
+          />
+      </div>
+      <div className="relative h-80">
+        <Image />
+      </div>
       </div>
     </Fragment>
   )
