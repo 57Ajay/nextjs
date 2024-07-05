@@ -5,6 +5,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/contexts/theme-context';
 import BodyComponent from '@/components/contexts/BodyComponent';
+import Container from '@/components/Container';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
       <ThemeProvider>
         <BodyComponent>
           <Navbar />
-          {children}
+          <Container>
+            {children}
+          </Container>
         </BodyComponent>
       </ThemeProvider>
     </html>
