@@ -6,7 +6,7 @@ const Footer = () => {
     © 2024, All Rights Reserved By Ajay Upadhyay & Team.
 
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -25,9 +25,11 @@ export default function RootLayout({
       <ThemeProvider>
         <BodyComponent>
           <Navbar />
+          {/* <div className='min-h-[80vh]'> */}
           <Container>
             {children}
           </Container>
+          {/* </div> */}
           <Footer />
         </BodyComponent>
       </ThemeProvider>
